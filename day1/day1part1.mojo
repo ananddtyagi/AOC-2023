@@ -1,4 +1,3 @@
-from python import Python
 import time
 
 fn getFirstAndLastDigit(line: String) -> (Int, Int):
