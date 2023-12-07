@@ -39,10 +39,8 @@ with open("data.txt") as data:
                             gears_coors[adj[0]][adj[1]].append(line[num_start:c_n])
                         else:    
                             gears_coors[adj[0]][adj[1]] = [line[num_start:c_n]]
-                print()
             c_n+=1
         
-    print(gears_coors)
     for gear_row in gears_coors:
         parts_list = gears_coors[gear_row].values()
         for parts in parts_list:
