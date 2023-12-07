@@ -1,10 +1,6 @@
 with open("data.txt") as data:
     games = 0
     for line in data:
-        red = 12
-        green = 13
-        blue = 14
-        
         color_map = {"green": 13, "red": 12, "blue": 14}
         
         game, game_info = line.strip().split(": ")
