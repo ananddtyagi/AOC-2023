@@ -1,5 +1,7 @@
-import time
 import numpy as np
+import time
+
+start = time.time()
 
 class Node:
     def __init__(self, value: str):
@@ -46,9 +48,7 @@ with open("data.txt") as data:
         
     counts = [0]*len(curr_nodes)
     counts_set = [0]*len(curr_nodes)
-    while not sum(counts_set) == len(curr_nodes):
-        print(curr_nodes)
-        
+    while not sum(counts_set) == len(curr_nodes):        
         instruction = instructions[count % len(instructions)]
         for i in range(len(curr_nodes)):
             if curr_nodes[i].value[2] == "Z" and counts_set[i] == 0:
@@ -60,11 +60,10 @@ with open("data.txt") as data:
                 else:
                     curr_nodes[i] = curr_nodes[i].r
         count+=1
-        print(counts)
-            
-        # print(curr_nodes)
     print(counts)
     # the only reason you can use lcm here is due to luck.
     # there is really nothing in the problem indicating that each path from starting A to first Z
     # is the exit node it will eventually hit to exit, which LCM assumes. In fact, each exit isn't even a loop back to the starting node.
     print(np.lcm.reduce(counts))
+
+print(time.time() - start)
